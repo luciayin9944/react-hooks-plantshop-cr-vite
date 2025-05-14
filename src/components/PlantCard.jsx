@@ -9,9 +9,10 @@ function PlantCard({ plant }) {
 
   return (
     <li className="card" data-testid="plant-item">
-      <img src={"https://via.placeholder.com/400"} alt={"plant name"} />
-      <h4>Plant name: {plant.name}</h4>
-      <p>Price: ${plant.price}</p>
+      {/* <img src={"https://via.placeholder.com/400"} alt={"plant name"} /> */}
+      <img src={plant.image} alt={plant.name} />
+      <h4>{plant.name}</h4>
+      <p>Price: {plant.price}</p>
       {inStock ? (
         <button className="primary" onClick={handleClick}>In Stock</button>
       ) : (

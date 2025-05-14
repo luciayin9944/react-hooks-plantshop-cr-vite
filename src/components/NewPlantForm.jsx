@@ -3,17 +3,17 @@ import { v4 as uuid } from "uuid";
 
 function NewPlantForm({ onAddPlant }) {
   const [name, setName] = useState('')
-  const [price, setPrice] = useState(null)
+  const [price, setPrice] = useState('')
   const [image, setImage] = useState('')
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newPlant = {id:uuid(), name, price, image}
+    const newPlant = { name, price: parseFloat(price), image}
     onAddPlant(newPlant);
 
     //reset
     setName('');
-    setPrice(null);
+    setPrice('');
     setImage('');
   }
 

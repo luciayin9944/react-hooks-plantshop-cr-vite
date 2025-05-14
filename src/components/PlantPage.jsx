@@ -9,11 +9,13 @@ function PlantPage() {
   const [search, setSearch] = useState('All');
 
   useEffect(() => {
-    fetch('/db.json')
+    //fetch('/db.json') 
+    fetch('http://localhost:6001/plants')
       .then((response)=>response.json())
       .then((data) => {
-        //console.log(data);
-        setPlants(data.plants)
+        console.log(data);
+        // setPlants(data.plants)
+        setPlants(data)
       })
       .catch(error => console.log(error));
   }, [])
